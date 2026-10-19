@@ -1,6 +1,6 @@
 module.exports = {
   // Get this from @BotFather on Telegram
-  BOT_TOKEN: "PUT_YOUR_BOT_TOKEN_HERE",
+  BOT_TOKEN: "8840208704:AAFQE2bsJhyibDlU9JB3_FK7NKP12M6j6nc",
 
   // Your numeric Telegram user ID (get it from @userinfobot)
   // Used for /stats and admin-only notifications
