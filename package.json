@@ -1,0 +1,17 @@
+{
+  "name": "anylink-bot",
+  "version": "1.0.0",
+  "description": "AnyLink by BotifyX\u2122 \u2014 Telegram bot that downloads video from a link you send it.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "node scripts/install-ytdlp.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "MIT"
+}
