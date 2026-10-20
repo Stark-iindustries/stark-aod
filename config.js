@@ -1,6 +1,6 @@
 module.exports = {
-  // Get this from @BotFather on Telegram
-  BOT_TOKEN: "8840208704:AAFQE2bsJhyibDlU9JB3_FK7NKP12M6j6nc",
+  // Bot token is read from the BOT_TOKEN environment variable (never stored in this file).
+  // Set it in your panel / Docker / Pterodactyl environment variables.
 
   // Your numeric Telegram user ID (get it from @userinfobot)
   // Used for /stats and admin-only notifications

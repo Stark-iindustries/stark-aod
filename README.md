@@ -7,12 +7,14 @@ Telegram bot: send it a link, it sends back the video.
 1. Create a server on the **Node.js** egg (Node 16+).
 2. Upload this zip's contents to the server root (no nested folder — files
    should sit directly under `/home/container/`).
-3. Open `config.js` and set:
-   - `BOT_TOKEN` — from [@BotFather](https://t.me/BotFather)
+3. Set the environment variable **`BOT_TOKEN`** (or `TELEGRAM_BOT_TOKEN`)
+   to the token from [@BotFather](https://t.me/BotFather).  
+   Do **not** put the token in any file — it is read only from the environment.
+4. Optionally open `config.js` and set:
    - `ADMIN_ID` — your numeric Telegram user ID (e.g. from @userinfobot)
-4. Startup command: `npm install && npm start` (or install once, then
+5. Startup command: `npm install && npm start` (or install once, then
    `node index.js` — check your egg's startup settings).
-5. Start the server. On first install, `postinstall` downloads the yt-dlp
+6. Start the server. On first install, `postinstall` downloads the yt-dlp
    binary into `./bin/yt-dlp` automatically. This needs outbound internet
    access from the container.
 

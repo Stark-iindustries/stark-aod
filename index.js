@@ -8,9 +8,13 @@ const TelegramBot = require("node-telegram-bot-api");
 const config = require("./config");
 const forcejoin = require("./forcejoin");
 
-if (!config.BOT_TOKEN || config.BOT_TOKEN === "PUT_YOUR_BOT_TOKEN_HERE") {
+// Prefer environment variable so the token is never committed to the repo
+const BOT_TOKEN = process.env.BOT_TOKEN || process.env.TELEGRAM_BOT_TOKEN;
+
+if (!BOT_TOKEN) {
   console.error(
-    "[anylink] Set BOT_TOKEN in config.js before starting the bot."
+    "[anylink] BOT_TOKEN (or TELEGRAM_BOT_TOKEN) environment variable is not set.\n" +
+      "Set it in your hosting panel / Docker / Pterodactyl environment variables and restart."
   );
   process.exit(1);
 }
@@ -19,7 +23,7 @@ const YTDLP_PATH = path.join(__dirname, "bin", "yt-dlp");
 const DOWNLOAD_DIR = path.resolve(__dirname, config.DOWNLOAD_DIR);
 if (!fs.existsSync(DOWNLOAD_DIR)) fs.mkdirSync(DOWNLOAD_DIR, { recursive: true });
 
-const bot = new TelegramBot(config.BOT_TOKEN, { polling: true });
+const bot = new TelegramBot(BOT_TOKEN, { polling: true });
 
 const URL_REGEX = /https?:\/\/[^\s]+/i;
 
